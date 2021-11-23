@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ru.trx.grpc;
+
+option java_multiple_files = true;
+option java_package = "ru.trx.grpc.api";
+option java_outer_classname = "OrderProto";
+
+service OrderService {
+  rpc GetOrder(OrderRequest) returns (Order) {
+
+  }
+}
+
+message Order {
+  string id = 1;
+}
+
+message OrderRequest {
+  string id = 1;
+}
