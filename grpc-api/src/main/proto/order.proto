@@ -7,15 +7,15 @@ option java_package = "ru.trx.grpc.api";
 option java_outer_classname = "OrderProto";
 
 service OrderService {
-  rpc GetOrder(OrderRequest) returns (Order) {
+  rpc FindOrderById(OrderIdMsg) returns (OrderMsg) {
 
   }
 }
 
-message Order {
+message OrderMsg {
   string id = 1;
 }
 
-message OrderRequest {
+message OrderIdMsg {
   string id = 1;
 }

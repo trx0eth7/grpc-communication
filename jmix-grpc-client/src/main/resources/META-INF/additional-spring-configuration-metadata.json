@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "main.datasource.url",
+      "type": "java.lang.String",
+      "description": "Jmix main datasource url."
+    },
+    {
+      "name": "main.datasource.username",
+      "type": "java.lang.String",
+      "description": "Jmix main datasource username."
+    },
+    {
+      "name": "main.datasource.password",
+      "type": "java.lang.String",
+      "description": "Jmix main datasource password."
+    }
+  ]
+}

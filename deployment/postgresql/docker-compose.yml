@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+  jmix-grpc-client-postgresql:
+    image: postgres:${POSTGRESQL_VERSION}
+    container_name: jmix-grpc-client-postgresql
+    ports:
+      - "5433:5432"
+    restart: always
+    environment:
+      POSTGRES_DB: jgc
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./jgcp-data:/var/lib/postgresql/data
+    networks:
+      - grpc-communication-network
+
+  jmix-grpc-server-postgresql:
+    image: postgres:${POSTGRESQL_VERSION}
+    container_name: jmix-grpc-server-postgresql
+    ports:
+      - "5434:5432"
+    restart: always
+    environment:
+      POSTGRES_DB: jgs
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./jgsp-data:/var/lib/postgresql/data
+    networks:
+      - grpc-communication-network
+
+networks:
+  grpc-communication-network:
+    driver: bridge
+
+volumes:
+  jgsp-data:
+  jgcp-data:

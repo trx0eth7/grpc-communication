@@ -1,0 +1,5 @@
+rootProject.name = 'grpc-communication'
+
+include 'grpc-api'
+include 'jmix-grpc-client'
+include 'jmix-grpc-server'
