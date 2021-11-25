@@ -21,5 +21,9 @@ Prepare database using docker-compose:
 * `check docker-compose.yml`
 * `docker-compose up -d`
 
-#### 3. Run applications
+#### 3. Generate gRPC api layer
+Prepare client and server proto services
+* `./gradlew grpc-api:assemble publishToMavenLocal`
+
+#### 4. Run applications
 For jmix to jmix communication: run jmix-grpc-client and jmix-grpc-server applications
